@@ -3,6 +3,7 @@ package com.tahrirsquad.morsimeter.model;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
+import lombok.experimental.Accessors;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -19,27 +20,28 @@ import java.util.List;
 
 @Entity
 @Data
+@Accessors(chain = true)
 public class Promise {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Integer id;
+    private Integer id;
 
     @Column(nullable = false)
-    String title;
+    private String title;
 
     @Enumerated(EnumType.STRING)
-    PromiseStatus status;
+    private PromiseStatus status;
 
-    LocalDate completed_at;
+    private  LocalDate completed_at;
 
     @ManyToOne
     @JoinColumn(name = "category_id")
     @JsonBackReference
-    Category category;
+    private Category category;
 
     @OneToMany
     @JoinColumn(name = "promise_id")
-    List<Post> posts;
+    private List<Post> posts;
 
 }
