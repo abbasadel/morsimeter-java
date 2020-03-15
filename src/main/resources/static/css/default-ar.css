@@ -1,0 +1,135 @@
+@font-face{
+    font-family:'GESSTwoMedium';
+    src:url("../font/GESSTwoMedium.otf");
+    font-weight:normal;
+    font-style:normal;
+}
+
+h1, h2, h3, h4, h5, .promise-text, .question, .answer , .breadcrumb{
+    font-family: 'GESSTwoMedium', sans-serif;
+    font-weight: Normal !important;
+}
+
+h1{ font-size: 5em; margin: 10px; padding-bottom: 10px;}
+h2{font-size: 1.5em; margin: 2px;}
+h3{font-size: 1.1em; margin: 2px;}
+h4{font-size: 1.8em; padding-bottom: 10px;margin-top: 10px;}
+
+
+h4 i{
+    margin-top:9px;
+    margin-left: 9px;
+}
+/*
+h2 i{
+    margin-top:9px;
+    margin-left: 19px;
+
+}*/
+
+.top-icons {float: left}
+/*.top-icons span {margin-top:9px;    margin-right: 19px;}*/
+
+.positive{
+    color:green;
+}
+
+.negative{
+    color:grey;
+}
+
+p{
+    font-family: 'GESSTwoMedium', sans-serif;
+    text-align: right;
+    font-size: 1em;
+
+}
+ul, li, .table th, .table td{
+    text-align: right;
+    font-size: 15px;
+}
+
+li, td{
+    list-style-type: none;
+    line-height: 25px;
+}
+
+footer p{
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+#totallikes{
+    float: left  ;
+}
+
+.label-success, .badge-success {
+
+	font-weight: normal;
+}
+.nav-tabs > li, .nav-pills > li {
+    float: right;
+}
+ @media (min-width: 768px) and (max-width: 1200px) { 
+ 	.offset1 {
+    margin-right: 100px;
+}
+}
+[class*="span"] {
+    float: right;
+    margin-left: 20px;
+}
+  
+ .nav-tabs > li > a, .nav-pills > li > a {
+ 	 padding-right: 5px;
+ 	 padding-left: 10px;
+ }
+
+
+.question{color:#936e3a;font-size: 1.3em; margin-top: 0.6em;}
+.answer{color:#4e4949; margin-bottom: 1.5em; margin-top: 0.6em;} 
+.post p{
+	font-family: Tahoma, Arial, Helvetica, sans-serif;
+}
+
+.post *{
+	text-direction: rtl;
+	text-align: right;
+}
+
+.float-other-side{float: left !important;}
+.float-side{float: right !important;}
+
+.align-side{text-align: right !important}
+.align-other-side{text-align: left !important}
+
+
+/** category */
+/*
+.category-meter .promises {
+    margin-right: 0px;
+    
+}
+
+.category-meter .inprogress{
+    margin-right: 0px; 
+    margin-left: 0px;
+}*/
+
+.offset1 {
+    margin-right: 150px;
+}
+@media (max-width: 979px){
+    .offset1 {
+       margin-right: 100px;
+    }
+}
+
+ .offset1 {
+    margin-left: 150px;
+}
+@media (max-width: 979px){
+    .offset1 {
+       margin-left: 100px;
+    }
+}

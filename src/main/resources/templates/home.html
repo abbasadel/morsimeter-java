@@ -1,0 +1,62 @@
+<div class="tabbable" id="myTab"> <!-- Only required for left/right tabs -->
+    <ul class="nav nav-tabs">
+        <?php for ($i = 1; $i <= 5; $i++): ?>
+        <li class="<?php echo $i == $activeTabId ? 'active' : '' ?>"><a href="#tab<?php echo $i ?>" data-toggle="tab">
+            <h2><i class='<?php echo __('promise.' . $i . '.icon') ?>'></i>
+                <?php echo __('promise.' . $i . '.title') ?>
+                <?php if ($i == $activeTabId) echo '<i class="icon-fire notification" title="Updated"></i>'; ?>
+            </h2>
+        </a></li>
+        <?php endfor ?>
+        <?php if (OTHERS_TAB_ENABLED): ?>
+        <li class="others float-other-side">
+            <a href="#tab6" data-toggle="tab" style="background-color: #eee">
+                <h2>
+                    <i class="icon-star-empty" ></i> <?php echo __('promise.others') ?>
+                </h2>
+            </a>
+        </li>
+        <?php endif ?>
+
+    </ul>
+    <div class="tab-content">
+        <?php
+        $active = true;
+        for ($i = 1; $i <= 5; $i++):
+            ?>
+        <div class="tab-pane <?php echo $i == $activeTabId ? 'active' : '' ?>" id="tab<?php echo $i ?>">
+            <?php echo View::factory('promise')->set('id', $i)->bind('category', $categories[$i]) ?>
+        </div>
+        <?php endfor ?>
+        <?php if (OTHERS_TAB_ENABLED): ?>
+        <!-- others tab -->
+        <div class="tab-pane " id="tab6">
+            <?php
+                //$id = $this->request->param('id', FALSE);
+            $promise = Model::factory('Promise');
+            $promise->id = 0;
+            $promise->category = new Model_Category();
+            $promise->category->id = 0;
+
+            $posts = Model::factory('Post')->getAllPublished(0);
+
+            foreach ($posts as $p) {
+            $promise->addPost($p);
+            }
+
+            $user = Utils::getUser();
+            $states = Model::factory('Location')->getStates();
+            $content = View::factory('promise_posts')
+            ->bind('promise', $promise)
+            ->bind('user', $user)
+            ->bind('states', $states);
+            echo $content;
+            ?>
+
+
+            <?php //echo  view::factory('promise/others') ?>
+
+        </div>
+        <?php endif ?>
+    </div>
+</div>

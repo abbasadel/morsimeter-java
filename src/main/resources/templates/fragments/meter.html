@@ -1,0 +1,80 @@
+<div class="row" th:fragment="meter">
+    <div class='span3 offset1'>
+        <a href="<?= URL::site('/') ?>">
+            <img th:src="@{/img/morsimeter-logo.gif}" alt="Morsi Meter مرسي ميتر" />
+        </a>
+    </div><!-- span3 -->
+
+    <div class="span6">
+        <div class="row">
+            <h1 class="hidden-phone" th:text="#{morsi.meter}">
+            </h1>
+        </div>
+        <div class="row">
+            <div class="span5" id="header-meter">
+                <h4> <i class=" icon-calendar"></i>
+                    <span th:text="#{days(1,100)}" th:remove="tag"></span>
+                </h4>
+                <!-- progress-->
+                <div class="progress progress-striped">
+                    <div class="bar" style="width: 100%;"></div>
+                </div>
+                <!-- progress-->
+                <h4> <i class=" icon-cogs"></i>
+                    <span th:text="#{promises.inprogress(1,100)}" th:remove="tag"></span>
+<!--                    <?php echo __('promises.inprogress', array(':from' => $meter->inprogressCounts, ':to' => (Model_Meter::TOTAL_NUMBER_OF_PROMISES - $meter->doneCounts))) ?>-->
+                </h4>
+                <!-- progress-->
+                <div class="progress progress-striped progress-warning">
+                    <div class="bar" style="width: 50%;"></div>
+                </div>
+
+
+                <h4> <i class=" icon-ok"></i>
+<!--                    <?php echo __('promises', array(':from' => $meter->doneCounts, ':to' => Model_Meter::TOTAL_NUMBER_OF_PROMISES)) ?>-->
+                    <span th:text="#{promises(1,100)}" th:remove="tag"></span>
+                </h4>
+                <!-- progress-->
+                <div class="progress progress-striped progress-success">
+                    <div class="bar" style="width: 50%;"></div>
+                </div>
+                <!-- progress-->
+
+                <!-- satisfaction -->
+<!--                <?php if (VOTE_ENABLE AND ($meter->dislikesCount + $meter->likesCount > 0)): ?>-->
+<!--                <div id="people-satisfaction">-->
+<!--                    <h4>-->
+<!--                        <?php echo __('people.satisfaction') ?> <span><?php echo $meter->likesPercent ?></span>%-->
+<!--                        &lt;!&ndash;span>-->
+<!--                            <span class="thumbs-down"><i class="icon-thumbs-down"></i><?php echo $meter->dislikesCount ?></span> ,-->
+<!--                            <span class="thumbs-up"><i class=" icon-thumbs-up"></i><?php echo $meter->likesCount ?></span>-->
+<!--                        </span&ndash;&gt;-->
+<!--                    </h4>-->
+
+<!--                    <div class="progress progress-striped progress-success" style="float: right;width: <?php echo $meter->likesPercent ?>%">-->
+<!--                        <div class="bar" style="width: 100%;"><?php echo $meter->likesPercent ?>%</div>-->
+<!--                    </div>-->
+<!--                    <div class="progress progress-striped progress-danger" style=" width: <?php echo $meter->dislikesPercent ?>%">-->
+<!--                        <div class="bar" style="width:100% "><?php echo $meter->dislikesPercent ?>%</div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <?php endif ?>-->
+
+
+
+            </div>
+
+            <div class="span1" style="margin: 0px; margin-top: 39px" >
+                <div class="fb-like"  data-href="https://www.facebook.com/MorsiMeter" data-send="false" data-layout="box_count" data-width="30" data-show-faces="false"></div>
+                <div style="padding: 10px">
+                    <a href="https://twitter.com/MorsiMeter" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false">Follow @MorsiMeter</a>
+                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js?v3";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="row span6 offset3">
+    <p th:text="#{tagline}"></p>
+</div>

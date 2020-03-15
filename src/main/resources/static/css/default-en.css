@@ -1,0 +1,109 @@
+h1{
+    font-size: 7em;
+    margin: 10px;
+    padding-bottom: 20px;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-weight: Normal;
+
+}
+
+h2{
+    font-size: 1.7em;
+    margin: 2px;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-weight: Normal;
+
+}
+
+h3{
+    font-size: 1.5em;
+    margin: 2px;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-weight: Normal;
+
+}
+
+h4{
+
+    font-size: 1.8em;
+    padding-bottom: 10px;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-weight: Normal;
+    margin-top: 10px;
+
+}
+
+h4 i{
+    margin-top:9px;
+    margin-right: 9px;
+}
+/*
+h2 i{
+    margin-top:9px;
+    margin-right: 19px;
+
+}*/
+
+.top-icons {float: right}
+.top-icons i {margin-top:9px;    margin-left: 19px;}
+
+.positive{
+
+    color:green;
+}
+
+.negative{
+    color:grey;
+
+}
+
+
+
+li{
+    list-style-type: none;
+}
+footer p{
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+ul, ol {
+    padding: 0;
+    margin: 0 0 9px 10px;
+}
+
+#totallikes{
+    float: right  ;
+}
+
+.green{
+    color: green;
+}
+.red{
+    color: red;
+}
+.nav-tabs > li > a, .nav-pills > li > a {
+    padding-left: 0px;
+    padding-right: 20px;
+}
+
+.offset1 {
+    margin-left: 150px;
+}
+
+.float-other-side{float: right;}
+.float-side{float: left;}
+
+.align-side{text-align: left !important}
+.align-other-side{text-align: right !important}
+
+/** category */
+
+.category-meter .promises {
+    margin-left: 0px;
+    
+}
+
+.category-meter .inprogress{
+    margin-right: 0px; 
+}

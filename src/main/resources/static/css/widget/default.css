@@ -1,0 +1,44 @@
+.border{
+    border-style:dotted ;
+    border-width:1px;
+}
+@font-face {
+    font-family: AmiriWeb;
+    font-style: normal;
+    font-weight: 400;
+    src: url('fonts/amiri-regular.eot?') format('eot'),
+        url('fonts/amiri-regular.woff') format('woff'),
+        url('fonts/amiri-regular.ttf')  format('truetype');
+}
+
+@font-face{
+    font-family:'GESSTwoMedium';
+    src:url("fonts/GESSTwoMedium.otf");
+    font-weight:normal;
+    font-style:normal;
+}
+
+h1,h2{
+    font-family: 'GESSTwoMedium';
+    font-weight: normal;
+    font-size: small;
+    margin: -6px;
+}
+.small{ font-size: x-small;}
+h9{ font-size: 2em;    font-family: 'GESSTwoMedium';color:#333745;}
+h5{ font-size: 2em;}
+.icon{ color:grey;}
+body,p{color:black;}
+.badge{ font-size: xx-small;padding: 3px;}
+.description{padding-top: 1em;}
+.headericon{margin-left: 19px;margin-top:10px;}
+.navicon{   margin-top:5px;}
+.hero-unit{    background-color: rgba(219,238,238,0.14);}
+.icon-minus-sign{color:red}
+.icon-ok {color:forestgreen}
+.icon-cog,  .icon-cogs {color:darkorange}
+.icon-calendar{color: #08C}
+.progress{height: 10px;}
+
+/* override */
+[class*="span"] { margin-right: 10px; }

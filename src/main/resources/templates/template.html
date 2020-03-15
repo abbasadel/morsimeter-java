@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">>
+<html th:lang="${#locale}" th:dir='${#locale=='ar'?'rtl': 'ltr'} <?php echo i18n::$lang == 'ar' ? 'rtl' : 'ltr' ?>'>
+<head>
+    <meta charset="utf-8">
+    <title th:text="#{web.title}"></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="fb:admins" content="<?php echo $facebook_admins ?>"/>
+    <meta property="fb:app_id" content="493526990663996"/>
+    <meta property="og:image" content="http://morsimeter.com/img/logo.png"/>
+    <link rel="image_src" href="http://morsimeter.com/media/img/logo.png" />
+    <meta itemprop="image" content="http://morsimeter.com/media/img/logo.png" />
+    <meta property="og:site_name" content="<?php echo __('web.title') ?>" />
+    <meta property="og:title" content="<?php echo __('web.title') ?>" />
+    <meta property="og:url" content="http://morsimeter.com" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="<?php echo __('tagline') ?>"/>
+
+    <meta name="keywords" content="<?php echo __('web.keywords') ?>" />
+    <meta name="description" content="<?php echo __('tagline') ?>" />
+    <meta name="robots" content="index, follow" />
+
+    <link href="<?= URL::base(); ?>media/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?= URL::base(); ?>media/css/default.css?v5.15" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,200' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="<?= URL::base(); ?>media/css/font-awesome.css">
+    <link rel="stylesheet" href="<?= URL::base(); ?>media/css/default-<?php echo i18n::$lang ?>.css?v5.15">
+
+
+    <style type="text/css" media="screen">
+            body{
+                padding-top:20px;
+            }
+
+            @media (max-width: 480px) {
+                h2{
+                    font-size: 1.1em;
+                }
+                h4{
+                    font-size: 1.44em;
+                }
+                li {
+                    line-height: 18px;
+                }
+            }
+
+
+
+            @media (min-width: 768px) and (max-width: 979px) {
+                h1{
+                    font-size: 4em;
+                }
+                h2{
+                    font-size: 1em;
+                    margin: 2px;
+                }
+                h4{
+                    font-size: 1.5em;
+                }
+
+            }
+        </style>
+
+    <link href="<?= URL::base(); ?>media/css/bootstrap-responsive<?php echo i18n::$lang == 'ar' ? '-rtl' : '' ?>.min.css?v4" rel="stylesheet">
+    <style type="text/css" media="screen">
+            .offset1 {
+                <?php echo i18n::$lang == 'ar' ? 'margin-right: 150px;' : 'margin-left: 150px;' ?>
+            }
+            @media (max-width: 979px){
+                .offset1 {
+                    <?php echo i18n::$lang == 'ar' ? 'margin-right: 100px;' : 'margin-left: 100px;' ?>
+                }
+            }
+        </style>
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="<?= URL::base(); ?>media/img/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?= URL::base(); ?>media/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?= URL::base(); ?>media/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?= URL::base(); ?>media/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="<?= URL::base(); ?>media/ico/apple-touch-icon-57-precomposed.png">
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js?v3"></script>
+    <script src="<?= URL::base(); ?>media/js/bootstrap-tab.js?v3?v3"></script>
+</head>
+
+<body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/all.js?v3#xfbml=1&appId=493526990663996";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+<div class="container">
+    <div class="row">
+        <div id="lang" class="span9 offset1">
+            <a href="<?= URL::site('ar') ?>"><?= __('lang.arabic') ?></a> | <a href="<?= URL::site('en') ?>"><?= __('lang.english') ?></a>
+        </div><!-- span9-->
+    </div><!-- row-->
+    <!-- header -->
+    <?php echo View::factory('header-meter')->bind('meter', $meter); ?>
+    <!-- /header -->
+
+    <div class="row">
+        <div id="content" class="span9 offset1" >
+
+            <hr>
+
+            <?php echo $content ?>
+        </div>
+    </div>
+
+    <div class='row'></div>
+    <footer>
+        <center>
+            <p></p>
+            <!-- Begin MailChimp Signup Form -->
+
+            <div id="mc_embed_signup">
+                <form action="http://morsimeter.us5.list-manage.com/subscribe/post?u=3285726f1adefa952c6b78af0&amp;id=29241c8677" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+                    <h4><?php echo __('newsletter') ?></h4>
+                    <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+                    <input type="submit" value="<?php echo __('subscribe') ?>" name="subscribe" id="mc-embedded-subscribe" class="btn">
+                </form>
+            </div>
+            <!--End mc_embed_signup-->
+
+
+            <small>
+                &copy; <?php echo __('createdby') ?>
+                <a href="http://www.zabatak.com" target="_blank"><img src="http://www.zabatak.com/zabatak-signature.png" width="100px"/></a>
+                <br/>
+                <a href="/faq"><?php echo __('faq') ?></a>
+            </small>
+
+            <br/>
+            <h4>
+                <a href="http://facebook.com/morsimeter" target="_blank"><i class="icon-facebook"></i></a>
+                <a href="http://www.twitter.com/morsimeter" target="_blank"><i class="icon-twitter"></i></a>
+                <a href="https://plus.google.com/109174421315378267952/posts" target="_blank">  <i class="icon-google-plus"></i></a>
+            </h4>
+            <small>morsimeter[at]zabatak.com</small>
+            <hr />
+            <small dir="ltr">
+
+
+                Logo by: <a href="http://goo.gl/BX7Lp" target="_blank"><img src="<?= URL::base(); ?>media/img/aman-adv.png" title="Aman Adv" /></a> |
+                Hosted and Secured by: <a href="http://goo.gl/wmbTJ" target="_blank"><img height="20" src="<?= URL::base(); ?>media/img/arabhosters.gif" title="Arab Hosters" /></a>
+
+            </small>
+            <p></p>
+        </center>
+
+        <script type="text/javascript">
+
+                var _gaq = _gaq || [];
+                _gaq.push(['_setAccount', 'UA-71480-12']);
+                _gaq.push(['_trackPageview']);
+
+                (function() {
+                    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js?v3';
+                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                })();
+
+                function updateHeaderMeter(){
+                    $.ajax({
+                        url: "<?php echo URL::site('/ajax/api/progress?key=localhost', TRUE) ?>",
+                        dataType: 'json',
+                        success: function(data){
+
+                            var  percent = data.percent_of_satisfaction;
+                            $('#people-satisfaction .progress-success').width(percent + '%');
+                            $('#people-satisfaction .progress-danger').width(100-percent + '%');
+                            $('#people-satisfaction .progress-success .bar').text(percent + '%');
+                            $('#people-satisfaction .progress-danger .bar').text(100-percent + '%');
+                            $('#people-satisfaction h4 span').text(percent );
+                        }
+                    });
+                };
+
+
+                //update my votes
+                function updateMyVotes(){
+                    $.ajax({
+                        url: "<?php echo URL::site('/ajax/vote/my', TRUE) ?>",
+                        dataType: 'json',
+                        success: function(data){
+
+                            $('#userId').val(data.userId);
+                            $.each(data.votes, function(postId, answer) {
+                                if(answer == 1){
+                                    $('#post-0-'+postId).addClass('dimmed');
+                                }else{
+                                    $('#post-1-'+postId).addClass('dimmed');
+
+                                }
+                                $('#post-1-'+postId).addClass('disabled');
+                                $('#post-0-'+postId).addClass('disabled');
+
+                            });
+
+                        }
+                    });
+                }
+
+                function updatePromise(id){
+                //alert('updating ' + id);
+
+                    $.ajax({
+                        url: "<?php echo URL::site('/ajax/api/promises/', TRUE) ?>/"+id+"?key=localhost",
+                        dataType: 'json',
+                        success: function(data){
+                            //var m =jQuery.parseJSON(data);
+                            //alert(data.likes);
+                            $('.promise-0-'+id).find('.votes').text(data.dislikes);
+                            $('.promise-1-'+id).find('.votes').text(data.likes);
+
+
+                        }
+                    });
+
+                    //alert('done updating ' + id);
+
+                }
+
+
+
+                //jQuery
+                $(document).ready(function(){
+                    $('.tooltip-demo').tooltip({placement : 'top'})
+
+                    //update meter
+                    updateHeaderMeter();
+
+                    //END
+                });
+
+
+                </script>
+    </footer>
+
+</div> <!-- /container -->
+
+
+
+<script src="<?= URL::base(); ?>media/js/bootstrap-modal.js"></script>
+<script src="<?= URL::base(); ?>media/js/bootstrap-typeahead.js"></script>
+<script src="<?= URL::base(); ?>media/js/bootstrap.min.js"></script>
+
+
+
+<script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'morsimeter'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script'); s.async = true;
+            s.type = 'text/javascript';
+            s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+
+
+        $(document).ready(function(){
+            $('.tooltip-demo').tooltip({placement : 'top'});
+            $('.tooltip-top').tooltip({placement : 'top'});
+            $('.tooltip-side').tooltip({placement : 'right'});
+        });
+        </script>
+
+</body>
+</html>

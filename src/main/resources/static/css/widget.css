@@ -1,0 +1,75 @@
+.border{
+ border-style:dotted ;
+ border-width:1px;
+}
+
+
+@font-face{
+    font-family:'GESSTwoMedium';
+    src:url("../font/GESSTwoMedium.otf");
+    font-weight:normal;
+    font-style:normal;
+}
+
+h1,h2{
+	font-family: 'GESSTwoMedium';
+	font-weight: normal;
+	font-size: small;
+		margin: -6px;
+}
+
+.small{
+	font-size: x-small;
+	
+}
+h9{
+	font-size: 2em;
+	font-family: 'GESSTwoMedium';
+			color:#333745;
+}
+
+h5{
+	font-size: 2em;
+	
+}
+
+.icon{
+	color:grey;
+	
+}
+body,p{
+		color:black;
+
+}
+
+.badge{
+font-size: xx-small;
+padding: 3px;	
+	
+}
+
+.block{
+	width:60px; 
+	float:right;
+	padding: 0px;
+	margin: 0px; 
+	
+}
+.description{
+	
+	padding-top: 1em;
+
+}
+
+.headericon{
+	margin-left: 19px;
+	margin-top:10px;	
+}
+
+.navicon{
+	
+	margin-top:5px;
+}
+.hero-unit{
+	background-color: rgba(219,238,238,0.14);
+}
