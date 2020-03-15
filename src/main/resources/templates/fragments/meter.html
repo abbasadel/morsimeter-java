@@ -7,13 +7,12 @@
 
     <div class="span6">
         <div class="row">
-            <h1 class="hidden-phone" th:text="#{morsi.meter}">
-            </h1>
+            <h1 class="hidden-phone" th:text="#{morsi.meter}"></h1>
         </div>
         <div class="row">
             <div class="span5" id="header-meter">
                 <h4> <i class=" icon-calendar"></i>
-                    <span th:text="#{days(1,100)}" th:remove="tag"></span>
+                    <span th:text="#{days(100,100)}" th:remove="tag"></span>
                 </h4>
                 <!-- progress-->
                 <div class="progress progress-striped">
@@ -21,22 +20,22 @@
                 </div>
                 <!-- progress-->
                 <h4> <i class=" icon-cogs"></i>
-                    <span th:text="#{promises.inprogress(1,100)}" th:remove="tag"></span>
+                    <span th:text="#{promises.inprogress(${stats.getStatusCount('IN_PROGRESS')},${stats.statusTotal})}" th:remove="tag"></span>
 <!--                    <?php echo __('promises.inprogress', array(':from' => $meter->inprogressCounts, ':to' => (Model_Meter::TOTAL_NUMBER_OF_PROMISES - $meter->doneCounts))) ?>-->
                 </h4>
                 <!-- progress-->
                 <div class="progress progress-striped progress-warning">
-                    <div class="bar" style="width: 50%;"></div>
+                    <div class="bar" th:style="'width:' + ${T(Math).ceil(stats.getStatusPercentage('IN_PROGRESS')*100)} + '%;'"></div>
                 </div>
 
 
                 <h4> <i class=" icon-ok"></i>
 <!--                    <?php echo __('promises', array(':from' => $meter->doneCounts, ':to' => Model_Meter::TOTAL_NUMBER_OF_PROMISES)) ?>-->
-                    <span th:text="#{promises(1,100)}" th:remove="tag"></span>
+                    <span th:text="#{promises(${stats.getStatusCount('DONE')},${stats.statusTotal})}" th:remove="tag"></span>
                 </h4>
                 <!-- progress-->
                 <div class="progress progress-striped progress-success">
-                    <div class="bar" style="width: 50%;"></div>
+                    <div class="bar" th:style="'width:' + ${T(Math).ceil(stats.getStatusPercentage('DONE')*100)} + '%;'"></div>
                 </div>
                 <!-- progress-->
 
