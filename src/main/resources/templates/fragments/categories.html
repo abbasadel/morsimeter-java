@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://thymeleaf.org">
+<body>
+<div class="tabbable" id="myTab" th:fragment="categories(categories)">
+    <ul class="nav nav-tabs">
+        <li th:each="item: ${categories}" th:class="${itemStat.index}==0? 'active':'' ">
+            <a th:href="|#tab${item.key.id}|" data-toggle="tab">
+                <h2>
+
+                    <i th:class="#{|promise.${item.key.id}.icon|}"></i>
+                    <span th:text="#{|promise.${item.key.id}.title|}" th:remove="tag"></span>
+                </h2>
+            </a>
+        </li>
+
+
+    </ul>
+    <div class="tab-content">
+        <!--        <?php-->
+        <!--        $active = true;-->
+        <!--            ?>-->
+        <!--        <div th:each="item: ${categories}" class="tab-pane <?php echo $i == $activeTabId ? 'active' : '' ?>" id="tab<?php echo $i ?>">-->
+
+        <div th:each="item: ${categories}"  th:class="'tab-pane '+ (${itemStat.index}==0? 'active':'' )" th:id="|tab${item.key.id}|">
+            <div th:insert="fragments/promises.html :: promises(category=${item.key}, stats=${item.value})" >
+
+            </div>
+        </div>
+
+    </div>
+</div>
+</body>
+
+</html>
