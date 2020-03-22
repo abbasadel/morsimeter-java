@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<html th:lang="${#locale}" th:dir="__${#locale}__ == 'ar' ? 'rtl': 'ltr'">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://thymeleaf.org"
+      th:lang="${#locale}" th:dir="__${#locale}__ == 'ar' ? 'rtl': 'ltr'">
 <head>
     <meta charset="UTF-8">
     <title th:text="#{web.title}"></title>
@@ -22,10 +23,11 @@
 
 
     <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
-    <link rel="stylesheet" type="text/css" th:href="@{/css/default.css?v5.15}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/default.css}"/>
     <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,200' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" th:href="@{/css/font-awesome.css}"/>
-    <link rel="stylesheet" type="text/css" th:href="@{/css/default-}+${#locale} +'.css?v5.15'"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/default-} + (__${#locale}__ == 'ar' ? 'ar' : 'en') + '.css'">
+
 
     <style type="text/css" media="screen">
             body{
@@ -61,7 +63,8 @@
             }
         </style>
 
-    <link th:href="@{/css/bootstrap-responsive} + __${#locale}__ == 'ar' ? '-rtl' : '' + '.min.css?v4'" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap-responsive} + (__${#locale}__ == 'ar' ? '-rtl' : '') + '.min.css'">
+
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -101,9 +104,10 @@
     <div class="row">
         <div id="content" class="span9 offset1" >
 
-            <hr>
+            <hr />
 
-<!--            <?php echo $content ?>-->
+            <div th:insert="fragments/categories.html :: categories(categories=${categories})"></div>
+
         </div>
     </div>
 

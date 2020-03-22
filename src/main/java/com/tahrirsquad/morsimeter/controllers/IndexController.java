@@ -20,8 +20,8 @@ public class IndexController {
 
     @GetMapping("/")
     public String index(Model model){
-        model.addAttribute("categories", categoryService.findAll());
         model.addAttribute("stats", promiseService.calcTotalStats());
+        model.addAttribute("categories", categoryService.categoryStats());
         return "index";
 
     }

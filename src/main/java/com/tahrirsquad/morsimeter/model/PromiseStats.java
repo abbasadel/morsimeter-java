@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -48,6 +49,7 @@ public class PromiseStats {
     }
 
     public double getStatusPercentage(PromiseStatus promiseStatus) {
-        return BigDecimal.valueOf(counts.get(promiseStatus)).divide(BigDecimal.valueOf(getStatusTotal())).doubleValue();
+        return BigDecimal.valueOf(counts.get(promiseStatus))
+                .divide(BigDecimal.valueOf(getStatusTotal()), 2, RoundingMode.CEILING).doubleValue();
     }
 }
