@@ -2,7 +2,6 @@ package com.tahrirsquad.morsimeter.model;
 
 import lombok.Data;
 import org.springframework.data.annotation.CreatedDate;
-import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -21,6 +20,7 @@ public class Post {
     private Integer id;
 
     @NotNull
+    @Column(nullable = false, columnDefinition = "TEXT")
     private String title;
 
     @Column(name = "title_en")

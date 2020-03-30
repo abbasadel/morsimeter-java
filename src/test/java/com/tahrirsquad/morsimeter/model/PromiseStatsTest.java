@@ -1,6 +1,5 @@
 package com.tahrirsquad.morsimeter.model;
 
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -8,7 +7,6 @@ import java.util.List;
 
 import static com.tahrirsquad.morsimeter.model.PromiseStatus.*;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 
 class PromiseStatsTest {

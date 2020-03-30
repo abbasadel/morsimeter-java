@@ -1,7 +1,5 @@
 package com.tahrirsquad.morsimeter.model;
 
-import lombok.Data;
-
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
